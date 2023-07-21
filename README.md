@@ -4,13 +4,16 @@
 A `SoftKMeans` clusterer object is initialied and then called like any other `torch.nn.Module`.
 
 ## Example usage
+
 ```
 # Display points
 p = torch.rand(500, 2)
 plt.scatter(p.detach().numpy()[:, 0], p.detach().numpy()[:, 1])
 plt.show()
 ```
+
 <img src='./example_images/example_start.png'>
+
 ```
 # Use 
 clusterer = SoftKMeans(6, scale=False, center=False)
@@ -20,6 +23,7 @@ _, colours = assignments.max(dim=1)
 plt.scatter(p.detach().numpy()[:, 0], p.detach().numpy()[:, 1], c=colours)
 plt.scatter(cn.detach().numpy()[:, 0], cn.detach().numpy()[:, 1], c='red')
 plt.show()
+
 ```
 
 <img src='./example_images/example_clustered.png'>
@@ -46,6 +50,7 @@ for i in range(10):
         plt.scatter(cen.detach().numpy()[:, 0], cen.detach().numpy()[:, 1], c='red')
         plt.show()
 ```
+
 
 Iteration 1:
 
